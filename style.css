@@ -1,0 +1,246 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+
+html {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  background-color: var(--bg-primary-color);
+  color: var(--text-primary-color);
+
+}
+
+main {
+  width: 100%;
+  height: 100vh;
+}
+
+main section {
+  width: 100%;
+  height: 100%;
+  padding: var(--padding-2xl);
+  display: flex;
+  gap: var(--gutter-2xl);
+}
+
+main section .left {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gutter-l);
+  width: 68%;
+  align-items: center;
+}
+
+.btn {
+  padding: var(--padding-m) var(--padding-xl);
+  border: none;
+  outline: none;
+  border-radius: var(--border-radius-m);
+  background-color: var(--bg-active-color);
+  cursor: pointer;
+  color: var(--text-active-color);
+}
+
+#reset-btn {
+  background-color: var(--bg-danger-color);
+  color: var(--text-primary-color);
+}
+
+#download-btn {
+  background-color: var(--bg-success-color);
+  color: var(--text-primary-color);
+}
+
+main section .top {
+  display: flex;
+  align-items: center;
+  gap: var(--gutter-m);
+
+}
+
+main section .bottom {
+  background-color: red;
+  width: 100%;
+  align-items: center;
+  padding: var(--padding-2xl);
+  flex: 1;
+  min-height: 0;
+  /* this helps to make a box or make height and width of the box equal or in a specific ratio  */
+  border-radius: var(--border-radius-2xl);
+  background-color: var(--bg-secondary-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+main section .bottom .placeholder {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0.6;
+}
+
+main section .bottom .placeholder i {
+  font-size: 5rem;
+}
+
+main section .right {
+  background-color: var(--bg-secondary-color);
+  width: 32%;
+  overflow: hidden;
+  padding: var(--padding-xl);
+  border-radius: var(--border-radius-2xl);
+  display: flex;
+  flex-direction: column;
+  gap: var(--gutter-m);
+  min-height: 0;
+}
+
+main section .right .filter {
+  width: 100%;
+
+}
+
+main section .right .filter input {
+  width: 100%;
+  outline: none;
+  margin-top: var(--margin-s);
+}
+
+main section .right .filter input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 4px;
+  background: #fff;
+  border-radius: 2px;
+  outline: none;
+  cursor: pointer;
+}
+
+/* -webkit- is a vendor prefix. It tells the browser to use a browser-specific version of a CSS property or pseudo-element.it means making changes in browser default styling as input design is diff for all browsers */
+
+/* Track */
+main section .right .filter input[type="range"]::-webkit-slider-runnable-track {
+  height: 4px;
+  background: #fff;
+  border-radius: 2px;
+}
+
+/* Thumb */
+main section .right .filter input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  background: #ff2d2d;
+  border-radius: 50%;
+  margin-top: -7px;
+  /* Centers the thumb */
+  cursor: pointer;
+}
+
+/* Firefox */
+main section .right .filter input[type="range"]::-moz-range-track {
+  height: 4px;
+  background: #fff;
+  border-radius: 2px;
+}
+
+main section .right .filter input[type="range"]::-moz-range-thumb {
+  width: 18px;
+  height: 18px;
+  background: #ff2d2d;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+main section .right .filters {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gutter-m);
+  flex: 1;
+}
+
+canvas {
+  display: none;
+  max-width: 90%;
+  max-height: 60vh;
+}
+
+/* Presets Section */
+.presets {
+  margin-top: 1.5rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+/* Preset Button */
+.preset-btn {
+  background: #2b2b2b;
+  border: 1px solid #3a3a3a;
+  border-radius: 12px;
+
+  padding: 14px 12px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  color: white;
+  cursor: pointer;
+
+  transition: all .25s ease;
+}
+
+/* Hover Effect */
+.preset-btn:hover {
+  background: #383838;
+  border-color: #5a5a5a;
+  transform: translateY(-3px);
+}
+
+/* Click Effect */
+.preset-btn:active {
+  transform: scale(.96);
+}
+
+/* Icon */
+.preset-icon {
+  font-size: 1.6rem;
+}
+
+/* Name */
+.preset-name {
+  font-size: .9rem;
+  font-weight: 600;
+  color: white;
+}
+
+/* Selected Preset */
+.preset-btn.active {
+  background: #22c55e;
+  border-color: #22c55e;
+  color: white;
+}
+
+/* Active Icon */
+.preset-btn.active .preset-icon,
+.preset-btn.active .preset-name {
+  color: white;
+}
